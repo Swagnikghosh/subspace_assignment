@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search Engine</h1>
+        <form action="/api/blog-search" method="get">
+            <input type="text" name="query" id="search-box" placeholder="Enter your search query">
+            <button type="submit">Search</button>
+            
+        </form>
+        
+        
+    </div>
+    <div class="container">
+    <%for(blog of result){%>
+        <div class="post-container">
+            <p class="post-title"><%= blog.title %></p>
+            <img class="post-image" src="<%= blog.image_url %>" alt="">
+        </div>
+        
+    <%}%>
+</div>
+</body>
+</html>
